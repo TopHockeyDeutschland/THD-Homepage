@@ -36,6 +36,8 @@ header {
   list-style: none;
   display: flex;
   gap: 20px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .nav-links a {
@@ -100,8 +102,13 @@ header {
 
 @media (max-width: 600px) {
   .nav-links {
+    font-size: 0,9rem;
     flex-direction: column;
     gap: 10px;
+    padding: 5px 0;
+  }
+  .nabar {
+    padding: 2px 10px;
   }
   .social-logos {
     flex-direction: column;
@@ -145,4 +152,57 @@ header {
 h2 {
   color: #38b6ff;
   margin-bottom: 15px;
+}
+.footer-container {
+  text-align: center;
+  margin: 40px 0 20px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: #38b6ff;
+}
+
+.footer-links a:hover::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 20px);
+  height: 2px;
+  bottom: 0;
+  left: 10px;
+  background-color: #38b6ff;
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-links a {
+    padding: 8px 0;
+  }
+  
+  .footer-links a:hover::after {
+    width: 100%;
+    left: 0;
+  }
 }
